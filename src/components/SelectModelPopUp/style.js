@@ -14,7 +14,7 @@ export const SelectModelContainer = styled.div`
   border-radius: 10px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 
@@ -27,6 +27,54 @@ export const SelectModelContainer = styled.div`
   opacity: 0;
 
   background-color: ${theme.alternativePrimary};
+
+  .sideBar {
+    width: 20%;
+    height: 100%;
+    background-color: #49a8e7;
+
+    display: flex;
+    justify-content: flex-end;
+
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+  }
+
+  .sectionIndexContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    padding-top: 2rem;
+    width: 50%;
+  }
+
+  .sectionIndex {
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-left: .8rem;
+
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 60px;
+  }
+
+  .selectedIndex {
+    background-color: ${theme.alternativePrimary};
+  }
+
+  .sectionIndex img {
+    width: 50%;
+    padding: 0.3rem;
+    background-color: #49a8e7;
+
+    border-radius: 50%;
+  }
 `;
 
 export const ModelsContainer = styled.div`
@@ -58,7 +106,7 @@ export const ModelsContainer = styled.div`
     font-family: "Poppins", sans-serif;
     text-align: right;
     font-size: 0.75rem;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   .colorButton:hover {
@@ -122,7 +170,7 @@ export const ModelsContainer = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #2E2E2E;
+    background-color: #2e2e2e;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -135,7 +183,7 @@ export const ModelsContainer = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #31769F;
+    background-color: #31769f;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -148,7 +196,7 @@ export const ModelsContainer = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #D31737;
+    background-color: #d31737;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -161,7 +209,7 @@ export const ModelsContainer = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #8D8D8D;
+    background-color: #8d8d8d;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -217,6 +265,27 @@ export const IndexIndicator = styled.div`
   }
 `;
 
+export const PreviousIndexIndicator = styled.div`
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  height: fit-content;
+
+  img {
+    width: 25px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export const NextIndexIndicator = styled.div`
   position: absolute;
   right: 1rem;
@@ -249,33 +318,41 @@ export const OptionalsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    column-gap: 100px;
+    flex-wrap: wrap;
+    padding: 1.5rem;
   }
 
   .optional {
-    width:  150px;
+    width: 125px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    opacity: 0;
   }
 
   .optionalName {
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-align: center;
     color: ${theme.primaryColor};
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .optionalImage {
-    width: 100%;
+    width: 100px;
     border-radius: 50%;
+    transition: 0.5s ease-in-out;
 
     margin-bottom: 1rem;
-    box-shadow:
-  0px 0px 0.6px rgba(0, 0, 0, 0.105),
-  0px 0px 5px rgba(0, 0, 0, 0.21)
-;
+
+    box-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.097),
+      0px 0px 3.8px rgba(0, 0, 0, 0.143), 0px 0px 17px rgba(0, 0, 0, 0.24);
+  }
+
+  .optionalImage:hover {
+    cursor: pointer;
+    transform: scale(1.1);
   }
 
   .optionalCheckbox {
@@ -287,11 +364,59 @@ export const OptionalsContainer = styled.div`
   .optionalEmphasis {
     width: 50%;
     height: 100%;
+    opacity: 0;
+
+    position: relative;
+
     background-image: url(${(props) => props.$optionalEmphasis});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
-`;
+  .gradient {
+    width: 100%;
+    height: 100%;
 
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.0802696078431373) 0%,
+      rgba(18, 18, 18, 1) 100%
+    );
+    padding: 2rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .optionalEmphasist__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .optionalEmphasis__title {
+    font-size: 3rem;
+    text-align: right;
+    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.6);
+    font-family: "Poppins", sans-serif;
+  }
+
+  .optionalEmphasis__title_contrast {
+    font-size: 2rem;
+    text-align: right;
+    color: #f57d1f;
+    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.6);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    opacity: 1;
+  }
+
+  .rakuzanLogo {
+    position: absolute;
+    width: 150px;
+    bottom: 1rem;
+    left: 1rem;
+  }
+`;

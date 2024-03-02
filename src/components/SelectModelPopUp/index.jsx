@@ -1,7 +1,7 @@
 import { useState, useLayoutEffect, useEffect } from "react";
 import { gsap } from "gsap";
 
-import { Model } from "../../assets/images/models/models";
+import PersonalForm from "../PersonalForm";
 
 import {
   SelectModelContainer,
@@ -9,10 +9,14 @@ import {
   IndexIndicator,
   NextIndexIndicator,
   OptionalsContainer,
+  PreviousIndexIndicator,
 } from "./style";
+
+import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
 
 import { Icons } from "../../assets/images/svg/icons/icons";
 import { Optionals } from "../../assets/images/optionals/optionals";
+import { Model } from "../../assets/images/models/models";
 
 const SelectModel = () => {
   const [modelImg, setModelImg] = useState(Model.racingBlue);
@@ -22,6 +26,7 @@ const SelectModel = () => {
   const [optionalEmphasisImage, setOptionalEmphasisImage] = useState(
     "https://images.unsplash.com/photo-1638289394195-64e572399560?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   );
+  const [optionalsTitle, setoptionalsTitle] = useState(true);
 
   useEffect(() => {
     gsap.to(".modelImgContainer", {
@@ -66,20 +71,53 @@ const SelectModel = () => {
     });
   }, []);
 
+  useEffect(() => {
+    gsap.to(".optional", {
+      duration: 0.5,
+      x: 0,
+      opacity: 1,
+    });
+
+    gsap.to(".optionalEmphasis", {
+      duration: 0.5,
+      x: 0,
+      opacity: 1,
+    });
+  }, [formIndex]);
+
   const changeColor = (imageColor) => {
     setModelImg(imageColor);
   };
 
-  const nextFormItem = () => {
-    setformIndex(2);
+  const nextFormItem = (index) => {
+    setformIndex(index);
   };
-  
+
   const handleOptionalEmphasisImage = (url) => {
-    setOptionalEmphasisImage(url)
+    setOptionalEmphasisImage(url);
   };
 
   return (
     <SelectModelContainer className="mainContainer">
+      <div className="sideBar">
+        <div className="sectionIndexContainer">
+          <div className="sectionIndex">
+            <img src={Icons.selectColorIcon} alt="" />
+          </div>
+          <div className="sectionIndex">
+            <img src={Icons.addIcon} alt="" />
+          </div>
+          <div className="sectionIndex selectedIndex">
+            <img src={Icons.userIcon} alt="" />
+          </div>
+          <div className="sectionIndex">
+            <img src={Icons.homeIcon} alt="" />
+          </div>
+          <div className="sectionIndex">
+            <img src={Icons.checkIcon} alt="" />
+          </div>
+        </div>
+      </div>
       {formIndex === 1 && (
         <ModelsContainer>
           <IndexIndicator>
@@ -139,7 +177,12 @@ const SelectModel = () => {
           <div className="modelImgContainer">
             <img src={modelImg} alt="MT-07 Yamaha" className="modelImg" />
           </div>
-          <NextIndexIndicator onClick={nextFormItem}>
+          <NextIndexIndicator
+            onClick={() => {
+              nextFormItem(2);
+              setNextFormPage("Confirmation");
+            }}
+          >
             <span className="pageName">{nextFormPage}</span>
             <img src={Icons.arrowRight} alt="" />
           </NextIndexIndicator>
@@ -147,10 +190,6 @@ const SelectModel = () => {
       )}
       {formIndex == 2 && (
         <OptionalsContainer $optionalEmphasis={optionalEmphasisImage}>
-          <IndexIndicator>
-            <span className="index">{formIndex}</span>
-            <span className="pageName">{formPage}</span>
-          </IndexIndicator>
           <div className="optionals">
             <div className="optional">
               <span className="optionalName">Front Light Projector</span>
@@ -158,20 +197,98 @@ const SelectModel = () => {
                 src={Optionals.frontLightPrev}
                 alt=""
                 className="optionalImage"
+                onClick={() => {
+                  setoptionalsTitle(false);
+                  handleOptionalEmphasisImage(Optionals.frontLigtBig);
+                }}
               />
               <input
                 type="checkbox"
                 name=""
                 id=""
                 className="optionalCheckbox"
-                onChange={handleOptionalEmphasisImage}
+              />
+            </div>
+            <div className="optional">
+              <span className="optionalName">Windscreen</span>
+              <img
+                src={Optionals.windScreenPrev}
+                alt=""
+                className="optionalImage"
+                onClick={() => {
+                  setoptionalsTitle(false);
+                  handleOptionalEmphasisImage(Optionals.windScreenBig);
+                }}
+              />
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                className="optionalCheckbox"
+              />
+            </div>
+            <div className="optional">
+              <span className="optionalName">Tail-light</span>
+              <img
+                src={Optionals.tailLightPrev}
+                alt=""
+                className="optionalImage"
+                onClick={() => {
+                  setoptionalsTitle(false);
+                  handleOptionalEmphasisImage(Optionals.tailLightBig);
+                }}
+              />
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                className="optionalCheckbox"
+              />
+            </div>
+            <div className="optional">
+              <span className="optionalName">Led Indicator</span>
+              <img
+                src={Optionals.ledIndicatorPrev}
+                alt=""
+                className="optionalImage"
+                onClick={() => {
+                  setoptionalsTitle(false);
+                  handleOptionalEmphasisImage(Optionals.ledIndicatorBig);
+                }}
+              />
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                className="optionalCheckbox"
               />
             </div>
           </div>
-          <div className="optionalEmphasis"></div>
+          <div className="optionalEmphasis">
+            <div className="gradient">
+              {optionalsTitle && (
+                <>
+                  <div className="optionalEmphasist__container">
+                    <h2 className="optionalEmphasis__title">Customize </h2>
+                    <span className="optionalEmphasis__title_contrast">
+                      Your machine
+                    </span>
+                  </div>
+                </>
+              )}
+              <img src={RakuzanLogo} alt="" className="rakuzanLogo" />
+            </div>
+          </div>
+          <NextIndexIndicator onClick={() => nextFormItem(3)}>
+            <span className="pageName">{nextFormPage}</span>
+            <img src={Icons.arrowRight} alt="" />
+          </NextIndexIndicator>
         </OptionalsContainer>
       )}
-      {/* <FormContainer></FormContainer> */}
+      {formIndex == 3 && <PersonalForm></PersonalForm>}
+      <PreviousIndexIndicator>
+        <img src={Icons.backwardIcon} alt="" />
+      </PreviousIndexIndicator>
     </SelectModelContainer>
   );
 };
