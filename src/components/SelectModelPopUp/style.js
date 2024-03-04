@@ -29,9 +29,9 @@ export const SelectModelContainer = styled.div`
   background-color: ${theme.alternativePrimary};
 
   .sideBar {
-    width: 20%;
+    width: 100px;
     height: 100%;
-    background-color: #49a8e7;
+    background-color: ${theme.primaryColor};
 
     display: flex;
     justify-content: flex-end;
@@ -58,7 +58,7 @@ export const SelectModelContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
 
-    padding-left: .8rem;
+    padding-left: 0.2rem;
 
     border-bottom-left-radius: 60px;
     border-top-left-radius: 60px;
@@ -71,7 +71,7 @@ export const SelectModelContainer = styled.div`
   .sectionIndex img {
     width: 50%;
     padding: 0.3rem;
-    background-color: #49a8e7;
+    background-color: ${theme.primaryColor};
 
     border-radius: 50%;
   }
@@ -81,27 +81,55 @@ export const ModelsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 100%;
   padding: 1rem;
 
   position: relative;
 
+  .rakuzanLogo {
+    position: absolute;
+    width: 100px;
+    top: 1rem;
+    right: 5rem;
+    opacity: 0;
+  }
+
+  .priceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    position: absolute;
+    right: 4rem;
+    top: 8rem;
+  }
+
+  .priceContainer span {
+    color: #757575;
+  }
+
+  .price {
+    font-size: 1.8rem;
+    font-family: "Anta", sans-serif;
+  }
+
   .colorsContainer {
     width: 60%;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   }
 
   .colorButton {
-    width: 25%;
+    width: 118px;
     border: 0;
     padding: 0.5rem;
     border-radius: 50px;
     position: relative;
     opacity: 0;
-
-    background-color: transparent;
 
     font-family: "Poppins", sans-serif;
     text-align: right;
@@ -126,64 +154,12 @@ export const ModelsContainer = styled.div`
     margin: auto;
   }
 
-  .ultraYellow::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #e6ae0b;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1em;
-    margin: auto;
-  }
-
-  .ultraHotRed::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #e21a23;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1em;
-    margin: auto;
-  }
-
   .stormGray::after {
     content: "";
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: #cbc8c6;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1em;
-    margin: auto;
-  }
-
-  .shadowBlack::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #2e2e2e;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1em;
-    margin: auto;
-  }
-
-  .lightBlue::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #31769f;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -204,25 +180,14 @@ export const ModelsContainer = styled.div`
     margin: auto;
   }
 
-  .silverBlue::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #8d8d8d;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 1em;
-    margin: auto;
-  }
-
   .modelImgContainer {
     width: 100%;
     height: 85%;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 50px;
+
     opacity: 0;
   }
 
@@ -247,19 +212,12 @@ export const IndexIndicator = styled.div`
   justify-content: center;
   align-items: flex-start;
 
-  .index {
-    margin-right: 1rem;
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
-  }
-
   .pageName {
+    font-size: 1.3rem;
     margin-top: 0.5rem;
     font-family: "Poppins", sans-serif;
   }
 
-  .index,
   .pageName {
     color: ${theme.linkColor};
   }
@@ -288,7 +246,7 @@ export const PreviousIndexIndicator = styled.div`
 
 export const NextIndexIndicator = styled.div`
   position: absolute;
-  right: 1rem;
+  right: 0rem;
   bottom: 1rem;
   width: 150px;
   height: 50px;
@@ -302,34 +260,97 @@ export const NextIndexIndicator = styled.div`
     color: ${theme.lightGrey};
     margin-right: 0.5rem;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const OptionalsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  justify-content: center;
+  width: 90%;
   height: 100%;
-
   position: relative;
+  background-image: url(${(props) => props.$optionalsBg});
+  background-position: center;
+  background-size: cover;
+
+  border-radius: 10px;
 
   .optionals {
-    width: 50%;
+    width: 90%;
     height: 100%;
+
+    position: relative;
+
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    column-gap: 100px;
-    flex-wrap: wrap;
+
     padding: 1.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .darkSideOfJapan__Container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    opacity: 0;
+  }
+
+  .darkSideOfJapan__Container h2 {
+    color: ${theme.primaryColor};
+    font-size: 2rem;
+    font-family: "Anta", sans-serif;
+  }
+
+  .darkSideOfJapan__Container span {
+    width: 100%;
+    font-family: "Anta", sans-serif;
+    text-align: right;
+    color: ${theme.linkColor};
+  }
+
+  .darkSideOfJapan__price {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .darkSideOfJapan__AddButton {
+    width: 100px;
+
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+
+    border-radius: 50px;
+    border: 0;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .darkSideOfJapan__AddButton:hover {
+    cursor: pointer;
+    background-color: #00000080;
+    color: #ffffff;
   }
 
   .optional {
-    width: 125px;
+    width: 156px;
+    height: 70px;
+    clip-path: polygon(0 0, 65% 0, 100% 100%, 29% 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 0;
+    overflow: hidden;
   }
 
   .optionalName {
@@ -340,8 +361,7 @@ export const OptionalsContainer = styled.div`
   }
 
   .optionalImage {
-    width: 100px;
-    border-radius: 50%;
+    width: 156px;
     transition: 0.5s ease-in-out;
 
     margin-bottom: 1rem;
@@ -356,9 +376,39 @@ export const OptionalsContainer = styled.div`
   }
 
   .optionalCheckbox {
-    width: 100px;
-    height: 20px;
-    border: 0;
+    margin-right: 1rem;
+  }
+
+  input[type="checkbox"] {
+    position: relative;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 0px;
+    top: 0;
+    left: 0;
+    background-color: ${theme.lightGrey}; /* Azul */
+  }
+
+  input[type="checkbox"]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 5px;
+    left: 9px;
   }
 
   .optionalEmphasis {
@@ -389,34 +439,5 @@ export const OptionalsContainer = styled.div`
     padding: 2rem;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-  }
-
-  .optionalEmphasist__container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .optionalEmphasis__title {
-    font-size: 3rem;
-    text-align: right;
-    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.6);
-    font-family: "Poppins", sans-serif;
-  }
-
-  .optionalEmphasis__title_contrast {
-    font-size: 2rem;
-    text-align: right;
-    color: #f57d1f;
-    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.6);
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    opacity: 1;
-  }
-
-  .rakuzanLogo {
-    position: absolute;
-    width: 150px;
-    bottom: 1rem;
-    left: 1rem;
   }
 `;

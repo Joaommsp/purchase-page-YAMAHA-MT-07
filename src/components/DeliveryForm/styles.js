@@ -8,7 +8,7 @@ const theme = {
   lightGrey: "#A9A9A9",
 };
 
-export const PersonalFormContainer = styled.div`
+export const DeliveryFormContainer = styled.div`
   width: 90%;
   height: 100%;
   display: flex;
@@ -32,18 +32,18 @@ export const PersonalFormContainer = styled.div`
     font-size: 1rem;
   }
 
-  .personalInfos {
+  .adressInfos {
     width: 100%;
     height: 100%;
   }
 
-  .personalInfos {
+  .adressInfos {
     display: flex;
     flex-direction: column;
     position: relative;
   }
 
-  .personalInfos__title {
+  .adressInfos__title {
     width: 100%;
     font-size: 1.3rem;
     color: ${theme.linkColor};
@@ -54,12 +54,12 @@ export const PersonalFormContainer = styled.div`
     text-align: left;
   }
 
-  .personalInfos__personal {
+  .adressInfos__personal {
     height: 50%;
     width: 100%;
   }
 
-  .personalInfos__personal {
+  .adressInfos__personal {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -74,6 +74,10 @@ export const PersonalFormContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .miniFormItem {
+    width: 25%;
   }
 
   .formItem label {
@@ -108,27 +112,27 @@ export const PersonalFormContainer = styled.div`
     margin-bottom: 2rem;
   }
 
-  .nameInput {
+  .cityInput {
     width: 90%;
   }
 
-  .lastNameInput {
+  .stateInput {
     width: 100%;
   }
 
-  .cpfInput {
+  .cepInput {
+    width: 80%;
+  }
+
+  .streetInput {
     width: 90%;
   }
 
-  .emailInput {
-    width: 100%;
-  }
-
-  .phoneInput {
+  .numberInput {
     width: 90%;
   }
 
-  /* .personalInfos__adress {
+  /* .adressInfos__adress {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -137,7 +141,7 @@ export const PersonalFormContainer = styled.div`
     color: ${theme.primaryColor};
   }
 
-  .personalInfos__adress .formItem input {
+  .adressInfos__adress .formItem input {
     height: 25px;
     font-size: 0.8rem;
   }

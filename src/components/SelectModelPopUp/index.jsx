@@ -2,6 +2,8 @@ import { useState, useLayoutEffect, useEffect } from "react";
 import { gsap } from "gsap";
 
 import PersonalForm from "../PersonalForm";
+import DeliveryForm from "../DeliveryForm";
+import Checkout from "../Checkout";
 
 import {
   SelectModelContainer,
@@ -13,6 +15,7 @@ import {
 } from "./style";
 
 import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
+import OptionalsBg from "../../assets/images/optionals-bg.png";
 
 import { Icons } from "../../assets/images/svg/icons/icons";
 import { Optionals } from "../../assets/images/optionals/optionals";
@@ -22,11 +25,10 @@ const SelectModel = () => {
   const [modelImg, setModelImg] = useState(Model.racingBlue);
   const [formIndex, setformIndex] = useState(1);
   const [formPage, setformPage] = useState("Select color");
-  const [nextFormPage, setNextFormPage] = useState("optionals");
-  const [optionalEmphasisImage, setOptionalEmphasisImage] = useState(
-    "https://images.unsplash.com/photo-1638289394195-64e572399560?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  );
-  const [optionalsTitle, setoptionalsTitle] = useState(true);
+  const [nextFormPage, setNextFormPage] = useState("Next");
+  const [goNextForm, setGoNextForm] = useState(true);
+  const [goPreviousForm, setGoPreviousForm] = useState(false);
+  const [price, setPrice] = useState(48500);
 
   useEffect(() => {
     gsap.to(".modelImgContainer", {
@@ -72,9 +74,41 @@ const SelectModel = () => {
   }, []);
 
   useEffect(() => {
+    gsap.to(".modelImgContainer", {
+      duration: 0.3,
+      x: -10,
+      opacity: 0,
+      onComplete: () => {
+        gsap.to(".modelImgContainer", {
+          x: 0,
+          duration: 0.4,
+          opacity: 1,
+        });
+      },
+    });
+
+    gsap.to(".colorButton", {
+      duration: 0.3,
+      x: -200,
+      opacity: 0,
+      onComplete: () => {
+        gsap.to(".colorButton", {
+          x: 0,
+          duration: 0.4,
+          opacity: 1,
+        });
+      },
+    });
+
     gsap.to(".optional", {
       duration: 0.5,
       x: 0,
+      opacity: 1,
+    });
+
+    gsap.to(".darkSideOfJapan__Container", {
+      duration: 1,
+      x: 55,
       opacity: 1,
     });
 
@@ -83,18 +117,41 @@ const SelectModel = () => {
       x: 0,
       opacity: 1,
     });
+
+    gsap.to(".rakuzanLogo", {
+      duration: 0.5,
+      x: 55,
+      opacity: 1,
+    });
   }, [formIndex]);
 
   const changeColor = (imageColor) => {
     setModelImg(imageColor);
   };
 
-  const nextFormItem = (index) => {
+  const nextFormItem = () => {
+    let index = formIndex + 1;
+    setGoPreviousForm(true);
+
+    if (index >= 5) {
+      index = 5;
+      setGoNextForm(false);
+    }
+
     setformIndex(index);
   };
 
-  const handleOptionalEmphasisImage = (url) => {
-    setOptionalEmphasisImage(url);
+  const previousFormItem = () => {
+    let index = formIndex - 1;
+
+    setGoNextForm(true);
+
+    if (index <= 1) {
+      index = 1;
+      setGoPreviousForm(false);
+    }
+
+    setformIndex(index);
   };
 
   return (
@@ -120,10 +177,17 @@ const SelectModel = () => {
       </div>
       {formIndex === 1 && (
         <ModelsContainer>
+          <img src={RakuzanLogo} alt="" className="rakuzanLogo" />
+          <div className="priceContainer">
+            <span className="price">R$ 48.500,00</span>
+            <span>or 24x of R$ 2300.00</span>
+          </div>
           <IndexIndicator>
-            <span className="index">{formIndex}</span>
             <span className="pageName">{formPage}</span>
           </IndexIndicator>
+          <div className="modelImgContainer">
+            <img src={modelImg} alt="MT-07 Yamaha" className="modelImg" />
+          </div>
           <div className="colorsContainer">
             <button
               className="colorButton racingBlue"
@@ -132,34 +196,10 @@ const SelectModel = () => {
               Racing Blue
             </button>
             <button
-              className="colorButton ultraYellow"
-              onClick={() => changeColor(Model.ultraYellow)}
-            >
-              Ultra Yellow
-            </button>
-            <button
               className="colorButton stormGray"
               onClick={() => changeColor(Model.stormGray)}
             >
               Storm Grey
-            </button>
-            <button
-              className="colorButton ultraHotRed"
-              onClick={() => changeColor(Model.ultraHotRed)}
-            >
-              UltraHot Red
-            </button>
-            <button
-              className="colorButton shadowBlack"
-              onClick={() => changeColor(Model.shadowBlack)}
-            >
-              Shadow Black
-            </button>
-            <button
-              className="colorButton lightBlue"
-              onClick={() => changeColor(Model.lightBlue)}
-            >
-              Light blue
             </button>
             <button
               className="colorButton bloodWhite"
@@ -167,40 +207,24 @@ const SelectModel = () => {
             >
               Blood White
             </button>
-            <button
-              className="colorButton silverBlue"
-              onClick={() => changeColor(Model.silverBlue)}
-            >
-              Silver Blue
-            </button>
           </div>
-          <div className="modelImgContainer">
-            <img src={modelImg} alt="MT-07 Yamaha" className="modelImg" />
-          </div>
-          <NextIndexIndicator
-            onClick={() => {
-              nextFormItem(2);
-              setNextFormPage("Confirmation");
-            }}
-          >
-            <span className="pageName">{nextFormPage}</span>
-            <img src={Icons.arrowRight} alt="" />
-          </NextIndexIndicator>
         </ModelsContainer>
       )}
       {formIndex == 2 && (
-        <OptionalsContainer $optionalEmphasis={optionalEmphasisImage}>
+        <OptionalsContainer $optionalsBg={OptionalsBg}>
           <div className="optionals">
+            <div className="darkSideOfJapan__Container">
+              <h2>Dark side of japan</h2>
+              <span>customization kit</span>
+              <span className="darkSideOfJapan__price">R$ 2.500,00</span>
+              <button className="darkSideOfJapan__AddButton" onClick={()=> setPrice(51000)} >To Add</button>
+            </div>
             <div className="optional">
               <span className="optionalName">Front Light Projector</span>
               <img
                 src={Optionals.frontLightPrev}
                 alt=""
                 className="optionalImage"
-                onClick={() => {
-                  setoptionalsTitle(false);
-                  handleOptionalEmphasisImage(Optionals.frontLigtBig);
-                }}
               />
               <input
                 type="checkbox"
@@ -215,10 +239,6 @@ const SelectModel = () => {
                 src={Optionals.windScreenPrev}
                 alt=""
                 className="optionalImage"
-                onClick={() => {
-                  setoptionalsTitle(false);
-                  handleOptionalEmphasisImage(Optionals.windScreenBig);
-                }}
               />
               <input
                 type="checkbox"
@@ -233,10 +253,6 @@ const SelectModel = () => {
                 src={Optionals.tailLightPrev}
                 alt=""
                 className="optionalImage"
-                onClick={() => {
-                  setoptionalsTitle(false);
-                  handleOptionalEmphasisImage(Optionals.tailLightBig);
-                }}
               />
               <input
                 type="checkbox"
@@ -251,10 +267,6 @@ const SelectModel = () => {
                 src={Optionals.ledIndicatorPrev}
                 alt=""
                 className="optionalImage"
-                onClick={() => {
-                  setoptionalsTitle(false);
-                  handleOptionalEmphasisImage(Optionals.ledIndicatorBig);
-                }}
               />
               <input
                 type="checkbox"
@@ -264,31 +276,26 @@ const SelectModel = () => {
               />
             </div>
           </div>
-          <div className="optionalEmphasis">
-            <div className="gradient">
-              {optionalsTitle && (
-                <>
-                  <div className="optionalEmphasist__container">
-                    <h2 className="optionalEmphasis__title">Customize </h2>
-                    <span className="optionalEmphasis__title_contrast">
-                      Your machine
-                    </span>
-                  </div>
-                </>
-              )}
-              <img src={RakuzanLogo} alt="" className="rakuzanLogo" />
-            </div>
-          </div>
-          <NextIndexIndicator onClick={() => nextFormItem(3)}>
-            <span className="pageName">{nextFormPage}</span>
-            <img src={Icons.arrowRight} alt="" />
-          </NextIndexIndicator>
         </OptionalsContainer>
       )}
       {formIndex == 3 && <PersonalForm></PersonalForm>}
-      <PreviousIndexIndicator>
-        <img src={Icons.backwardIcon} alt="" />
-      </PreviousIndexIndicator>
+      {formIndex == 4 && <DeliveryForm></DeliveryForm>}
+      {formIndex == 5 && <Checkout price={price}></Checkout>}
+      {goNextForm && (
+        <NextIndexIndicator
+          onClick={() => {
+            nextFormItem();
+          }}
+        >
+          <span className="pageName">{nextFormPage}</span>
+          <img src={Icons.arrowRight} alt="" />
+        </NextIndexIndicator>
+      )}
+      {goPreviousForm && (
+        <PreviousIndexIndicator onClick={previousFormItem}>
+          <img src={Icons.backwardIcon} />
+        </PreviousIndexIndicator>
+      )}
     </SelectModelContainer>
   );
 };
