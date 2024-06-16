@@ -13,17 +13,11 @@ const DeliveryForm = () => {
       x: 0,
       opacity: 1
     });
-
-    gsap.to(".rakuzanLogo", {
-      duration: 0.5,
-      x: 55,
-      opacity: 1
-    });
   })
 
   return (
     <DeliveryFormContainer className="DeliveryFormContainer">
-      <img src={RakuzanLogo} alt="Rakuzan Logo" className="rakuzanLogo" />
+      <img src={RakuzanLogo} alt="Rakuzan Logo" className="rakuzanLogo2" />
       <div className="adressInfos">
         <div className="adressInfos__personal">
           <h2 className="adressInfos__title">Delivery address</h2>

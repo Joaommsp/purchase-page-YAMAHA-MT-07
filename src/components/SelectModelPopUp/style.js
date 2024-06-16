@@ -9,8 +9,8 @@ const theme = {
 };
 
 export const SelectModelContainer = styled.div`
-  width: 70%;
-  height: 70%;
+  width: 1000px;
+  height: 80%;
   border-radius: 10px;
 
   display: flex;

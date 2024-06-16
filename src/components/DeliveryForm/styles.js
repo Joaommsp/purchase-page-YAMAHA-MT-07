@@ -21,10 +21,10 @@ export const DeliveryFormContainer = styled.div`
 
   background-color: ${theme.alternativePrimary};
 
-  .rakuzanLogo {
+  .rakuzanLogo2 {
     position: absolute;
     width: 100px;
-    right: 5rem;
+    right: 2rem;
     top: 1rem;
   }
 
