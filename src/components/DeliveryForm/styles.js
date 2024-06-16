@@ -24,7 +24,7 @@ export const DeliveryFormContainer = styled.div`
   .rakuzanLogo2 {
     position: absolute;
     width: 100px;
-    right: 2rem;
+    right: 5rem;
     top: 1rem;
   }
 

@@ -24,7 +24,8 @@ export const SelectModelContainer = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  opacity: 0;
+
+  z-index: 100;
 
   background-color: ${theme.alternativePrimary};
 
@@ -92,7 +93,6 @@ export const ModelsContainer = styled.div`
     width: 100px;
     top: 1rem;
     right: 5rem;
-    opacity: 0;
   }
 
   .priceContainer {
@@ -129,7 +129,6 @@ export const ModelsContainer = styled.div`
     padding: 0.5rem;
     border-radius: 50px;
     position: relative;
-    opacity: 0;
 
     font-family: "Poppins", sans-serif;
     text-align: right;
@@ -187,8 +186,6 @@ export const ModelsContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 50px;
-
-    opacity: 0;
   }
 
   .modelImg {
@@ -439,5 +436,99 @@ export const OptionalsContainer = styled.div`
     padding: 2rem;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+  }
+`;
+
+export const BannerContent = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  .homeTitle {
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  .homeSubtitle {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  .buyButton {
+    width: 15rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50px;
+
+    position: relative;
+
+    background-color: ${(props) => props.$bgColor};
+
+    color: ${theme.alternativePrimary};
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+
+    transition: 0.5s ease-in-out;
+
+    &::after {
+      content: "";
+      width: 25px;
+      height: 25px;
+      background-color: #ffffff;
+      border-radius: 50%;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: ${(props) => props.$position};
+      margin: auto;
+
+      transition: 0.5s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+`;
+
+export const ClosePopUp = styled.button`
+  border: 0;
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .closePopUpIcon {
+    width: 18px;
   }
 `;

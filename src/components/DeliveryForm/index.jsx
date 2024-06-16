@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useEffect } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 
 import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
@@ -6,14 +6,19 @@ import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
 import { DeliveryFormContainer, SubmitButton, ResetFormButton } from "./styles";
 
 const DeliveryForm = () => {
-
   useEffect(() => {
     gsap.to(".DeliveryFormContainer", {
       duration: 0.5,
       x: 0,
-      opacity: 1
+      opacity: 1,
     });
-  })
+
+    gsap.to(".rakuzanLogo2", {
+      duration: 0.5,
+      x: 55,
+      opacity: 1,
+    });
+  });
 
   return (
     <DeliveryFormContainer className="DeliveryFormContainer">

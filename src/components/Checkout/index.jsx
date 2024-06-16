@@ -18,12 +18,12 @@ import {
 } from "./styles";
 
 const Checkout = (props) => {
-  const [deliveryPrice, setDeliveryPrice] = useState(2000);
+  const [deliveryPrice,] = useState(2000);
 
   const [cardHolder, setCardHolder] = useState("********");
   const [cardNumber, setCardNumber] = useState("");
   const [cardMask, setCardMask] = useState("0000 0000 0000 0000");
-  const [cardExpiration, setCardExpiration] = useState("00/00");
+  const [cardExpiration,] = useState("00/00");
 
   const cardPatterns = {
     visa: /^4\d{0,15}/,

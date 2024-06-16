@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 
 import PersonalForm from "../PersonalForm";
@@ -12,6 +12,8 @@ import {
   NextIndexIndicator,
   OptionalsContainer,
   PreviousIndexIndicator,
+  BannerContent,
+  ClosePopUp,
 } from "./style";
 
 import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
@@ -24,11 +26,15 @@ import { Model } from "../../assets/images/models/models";
 const SelectModel = () => {
   const [modelImg, setModelImg] = useState(Model.racingBlue);
   const [formIndex, setformIndex] = useState(1);
-  const [formPage, setformPage] = useState("Select color");
-  const [nextFormPage, setNextFormPage] = useState("Next");
+  const [formPage] = useState("Select color");
+  const [nextFormPage] = useState("Next");
   const [goNextForm, setGoNextForm] = useState(true);
   const [goPreviousForm, setGoPreviousForm] = useState(false);
   const [price, setPrice] = useState(48500);
+  const [buttonAnimation, setbuttonAnimation] = useState(".5rem");
+  const [buttonBgColor, setbuttonBgColor] = useState("#00000090");
+  const [buttonText, setbuttonText] = useState("Buy online");
+  const [selectModel, setSelectModel] = useState(false);
 
   useEffect(() => {
     gsap.to(".modelImgContainer", {
@@ -154,149 +160,286 @@ const SelectModel = () => {
     setformIndex(index);
   };
 
+  const openSelectModelPopUp = () => {
+    setSelectModel(true);
+  };
+
+  const closeSelectModelPopUp = () => {
+    setSelectModel(false);
+  };
+
+  const animateButton = () => {
+    setbuttonAnimation("13rem");
+    setbuttonBgColor("#FF0303");
+    setbuttonText("Red Store");
+  };
+
+  const restoreButton = () => {
+    setbuttonAnimation(".5rem");
+    setbuttonBgColor("#00000090");
+    setbuttonText("Buy online");
+  };
+
   return (
-    <SelectModelContainer className="mainContainer">
-      <div className="sideBar">
-        <div className="sectionIndexContainer">
-          <div className="sectionIndex">
-            <img src={Icons.selectColorIcon} alt="" />
-          </div>
-          <div className="sectionIndex">
-            <img src={Icons.addIcon} alt="" />
-          </div>
-          <div className="sectionIndex selectedIndex">
-            <img src={Icons.userIcon} alt="" />
-          </div>
-          <div className="sectionIndex">
-            <img src={Icons.homeIcon} alt="" />
-          </div>
-          <div className="sectionIndex">
-            <img src={Icons.checkIcon} alt="" />
-          </div>
-        </div>
-      </div>
-      {formIndex === 1 && (
-        <ModelsContainer>
-          <img src={RakuzanLogo} alt="" className="rakuzanLogo" />
-          <div className="priceContainer">
-            <span className="price">R$ 48.500,00</span>
-            <span>or 24x of R$ 2300.00</span>
-          </div>
-          <IndexIndicator>
-            <span className="pageName">{formPage}</span>
-          </IndexIndicator>
-          <div className="modelImgContainer">
-            <img src={modelImg} alt="MT-07 Yamaha" className="modelImg" />
-          </div>
-          <div className="colorsContainer">
-            <button
-              className="colorButton racingBlue"
-              onClick={() => changeColor(Model.racingBlue)}
+    <>
+      {selectModel && (
+        <SelectModelContainer className="mainContainer">
+          {formIndex == 1 && (
+            <div className="sideBar">
+              <div className="sectionIndexContainer">
+                <div className="sectionIndex selectedIndex">
+                  <img src={Icons.selectColorIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.addIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.userIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.homeIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.checkIcon} alt="" />
+                </div>
+              </div>
+            </div>
+          )}
+          {formIndex == 2 && (
+            <div className="sideBar">
+              <div className="sectionIndexContainer">
+                <div className="sectionIndex">
+                  <img src={Icons.selectColorIcon} alt="" />
+                </div>
+                <div className="sectionIndex selectedIndex">
+                  <img src={Icons.addIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.userIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.homeIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.checkIcon} alt="" />
+                </div>
+              </div>
+            </div>
+          )}
+          {formIndex == 3 && (
+            <div className="sideBar">
+              <div className="sectionIndexContainer">
+                <div className="sectionIndex">
+                  <img src={Icons.selectColorIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.addIcon} alt="" />
+                </div>
+                <div className="sectionIndex selectedIndex">
+                  <img src={Icons.userIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.homeIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.checkIcon} alt="" />
+                </div>
+              </div>
+            </div>
+          )}
+          {formIndex == 4 && (
+            <div className="sideBar">
+              <div className="sectionIndexContainer">
+                <div className="sectionIndex">
+                  <img src={Icons.selectColorIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.addIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.userIcon} alt="" />
+                </div>
+                <div className="sectionIndex selectedIndex">
+                  <img src={Icons.homeIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.checkIcon} alt="" />
+                </div>
+              </div>
+            </div>
+          )}
+          {formIndex == 5 && (
+            <div className="sideBar">
+              <div className="sectionIndexContainer">
+                <div className="sectionIndex">
+                  <img src={Icons.selectColorIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.addIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.userIcon} alt="" />
+                </div>
+                <div className="sectionIndex">
+                  <img src={Icons.homeIcon} alt="" />
+                </div>
+                <div className="sectionIndex selectedIndex">
+                  <img src={Icons.checkIcon} alt="" />
+                </div>
+              </div>
+            </div>
+          )}
+          {formIndex === 1 && (
+            <ModelsContainer>
+              <img src={RakuzanLogo} alt="" className="rakuzanLogo" />
+              <div className="priceContainer">
+                <span className="price">R$ 48.500,00</span>
+                <span>or 24x of R$ 2300.00</span>
+              </div>
+              <IndexIndicator>
+                <span className="pageName">{formPage}</span>
+              </IndexIndicator>
+              <div className="modelImgContainer">
+                <img src={modelImg} alt="MT-07 Yamaha" className="modelImg" />
+              </div>
+              <div className="colorsContainer">
+                <button
+                  className="colorButton racingBlue"
+                  onClick={() => changeColor(Model.racingBlue)}
+                >
+                  Racing Blue
+                </button>
+                <button
+                  className="colorButton stormGray"
+                  onClick={() => changeColor(Model.stormGray)}
+                >
+                  Storm Grey
+                </button>
+                <button
+                  className="colorButton bloodWhite"
+                  onClick={() => changeColor(Model.bloodWhite)}
+                >
+                  Blood White
+                </button>
+              </div>
+            </ModelsContainer>
+          )}
+          {formIndex == 2 && (
+            <OptionalsContainer $optionalsBg={OptionalsBg}>
+              <div className="optionals">
+                <div className="darkSideOfJapan__Container">
+                  <h2>Dark side of japan</h2>
+                  <span>customization kit</span>
+                  <span className="darkSideOfJapan__price">R$ 2.500,00</span>
+                  <button
+                    className="darkSideOfJapan__AddButton"
+                    onClick={() => setPrice(51000)}
+                  >
+                    To Add
+                  </button>
+                </div>
+                <div className="optional">
+                  <span className="optionalName">Front Light Projector</span>
+                  <img
+                    src={Optionals.frontLightPrev}
+                    alt=""
+                    className="optionalImage"
+                  />
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="optionalCheckbox"
+                  />
+                </div>
+                <div className="optional">
+                  <span className="optionalName">Windscreen</span>
+                  <img
+                    src={Optionals.windScreenPrev}
+                    alt=""
+                    className="optionalImage"
+                  />
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="optionalCheckbox"
+                  />
+                </div>
+                <div className="optional">
+                  <span className="optionalName">Tail-light</span>
+                  <img
+                    src={Optionals.tailLightPrev}
+                    alt=""
+                    className="optionalImage"
+                  />
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="optionalCheckbox"
+                  />
+                </div>
+                <div className="optional">
+                  <span className="optionalName">Led Indicator</span>
+                  <img
+                    src={Optionals.ledIndicatorPrev}
+                    alt=""
+                    className="optionalImage"
+                  />
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="optionalCheckbox"
+                  />
+                </div>
+              </div>
+            </OptionalsContainer>
+          )}
+          {formIndex == 3 && <PersonalForm></PersonalForm>}
+          {formIndex == 4 && <DeliveryForm></DeliveryForm>}
+          {formIndex == 5 && <Checkout price={price}></Checkout>}
+          {goNextForm && (
+            <NextIndexIndicator
+              onClick={() => {
+                nextFormItem();
+              }}
             >
-              Racing Blue
-            </button>
-            <button
-              className="colorButton stormGray"
-              onClick={() => changeColor(Model.stormGray)}
-            >
-              Storm Grey
-            </button>
-            <button
-              className="colorButton bloodWhite"
-              onClick={() => changeColor(Model.bloodWhite)}
-            >
-              Blood White
-            </button>
-          </div>
-        </ModelsContainer>
+              <span className="pageName">{nextFormPage}</span>
+              <img src={Icons.arrowRight} alt="" />
+            </NextIndexIndicator>
+          )}
+          {goPreviousForm && (
+            <PreviousIndexIndicator onClick={previousFormItem}>
+              <img src={Icons.backwardIcon} />
+            </PreviousIndexIndicator>
+          )}
+          {selectModel && (
+            <ClosePopUp onClick={closeSelectModelPopUp}>
+              {" "}
+              <img
+                src={Icons.closeIcon}
+                className="closePopUpIcon"
+                alt="Close PopUp"
+              />{" "}
+            </ClosePopUp>
+          )}
+        </SelectModelContainer>
       )}
-      {formIndex == 2 && (
-        <OptionalsContainer $optionalsBg={OptionalsBg}>
-          <div className="optionals">
-            <div className="darkSideOfJapan__Container">
-              <h2>Dark side of japan</h2>
-              <span>customization kit</span>
-              <span className="darkSideOfJapan__price">R$ 2.500,00</span>
-              <button className="darkSideOfJapan__AddButton" onClick={()=> setPrice(51000)} >To Add</button>
-            </div>
-            <div className="optional">
-              <span className="optionalName">Front Light Projector</span>
-              <img
-                src={Optionals.frontLightPrev}
-                alt=""
-                className="optionalImage"
-              />
-              <input
-                type="checkbox"
-                name=""
-                id=""
-                className="optionalCheckbox"
-              />
-            </div>
-            <div className="optional">
-              <span className="optionalName">Windscreen</span>
-              <img
-                src={Optionals.windScreenPrev}
-                alt=""
-                className="optionalImage"
-              />
-              <input
-                type="checkbox"
-                name=""
-                id=""
-                className="optionalCheckbox"
-              />
-            </div>
-            <div className="optional">
-              <span className="optionalName">Tail-light</span>
-              <img
-                src={Optionals.tailLightPrev}
-                alt=""
-                className="optionalImage"
-              />
-              <input
-                type="checkbox"
-                name=""
-                id=""
-                className="optionalCheckbox"
-              />
-            </div>
-            <div className="optional">
-              <span className="optionalName">Led Indicator</span>
-              <img
-                src={Optionals.ledIndicatorPrev}
-                alt=""
-                className="optionalImage"
-              />
-              <input
-                type="checkbox"
-                name=""
-                id=""
-                className="optionalCheckbox"
-              />
-            </div>
-          </div>
-        </OptionalsContainer>
-      )}
-      {formIndex == 3 && <PersonalForm></PersonalForm>}
-      {formIndex == 4 && <DeliveryForm></DeliveryForm>}
-      {formIndex == 5 && <Checkout price={price}></Checkout>}
-      {goNextForm && (
-        <NextIndexIndicator
-          onClick={() => {
-            nextFormItem();
-          }}
+      <BannerContent $position={buttonAnimation} $bgColor={buttonBgColor}>
+        <h1 className="homeTitle">GT-07 ABS</h1>
+        <h2 className="homeSubtitle">the goddess of torque motorcycle</h2>
+        <button
+          className="buyButton"
+          onMouseEnter={animateButton}
+          onMouseLeave={restoreButton}
+          onClick={openSelectModelPopUp}
         >
-          <span className="pageName">{nextFormPage}</span>
-          <img src={Icons.arrowRight} alt="" />
-        </NextIndexIndicator>
-      )}
-      {goPreviousForm && (
-        <PreviousIndexIndicator onClick={previousFormItem}>
-          <img src={Icons.backwardIcon} />
-        </PreviousIndexIndicator>
-      )}
-    </SelectModelContainer>
+          {buttonText}
+        </button>
+      </BannerContent>
+    </>
   );
 };
 
