@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useEffect } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 
 import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
@@ -6,20 +6,19 @@ import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
 import { PersonalFormContainer, SubmitButton, ResetFormButton } from "./styles";
 
 const PersonalForm = () => {
-
   useEffect(() => {
     gsap.to(".personalFormContainer", {
       duration: 0.5,
       x: 0,
-      opacity: 1
+      opacity: 1,
     });
 
     gsap.to(".rakuzanLogo", {
       duration: 0.5,
       x: 55,
-      opacity: 1
+      opacity: 1,
     });
-  })
+  });
 
   return (
     <PersonalFormContainer className="personalFormContainer">

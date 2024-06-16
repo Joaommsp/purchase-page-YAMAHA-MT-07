@@ -9,14 +9,14 @@ const theme = {
 };
 
 export const SelectModelContainer = styled.div`
-  width: 1000px;
-  height: 80%;
+  width: 980px;
+  height: 85%;
   border-radius: 10px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   position: absolute;
   top: 0;
@@ -30,7 +30,7 @@ export const SelectModelContainer = styled.div`
   background-color: ${theme.alternativePrimary};
 
   .sideBar {
-    width: 100px;
+    width: 50px;
     height: 100%;
     background-color: ${theme.primaryColor};
 
@@ -52,7 +52,7 @@ export const SelectModelContainer = styled.div`
   }
 
   .sectionIndex {
-    width: 100%;
+    width: 40px;
     height: 40px;
 
     display: flex;
@@ -70,11 +70,33 @@ export const SelectModelContainer = styled.div`
   }
 
   .sectionIndex img {
-    width: 50%;
+    width: 24px;
     padding: 0.3rem;
     background-color: ${theme.primaryColor};
 
     border-radius: 50%;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 780px;
+    height: 85%;
+    border-radius: 10px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    width: 580px;
+    height: 85%;
+    border-radius: 10px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+
+    .sideBar {
+      border-radius: 0;
+    }
   }
 `;
 
@@ -82,7 +104,7 @@ export const ModelsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 100%;
   padding: 1rem;
 
@@ -197,6 +219,77 @@ export const ModelsContainer = styled.div`
   .modelImg:hover {
     transform: scale(1.1);
   }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .price {
+      font-size: 1rem;
+    }
+
+    .portions {
+      font-size: 0.8rem;
+    }
+
+    .rakuzanLogo {
+      width: 80px;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    .price {
+      font-size: 1rem;
+    }
+
+    .priceContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      position: absolute;
+      right: 4rem;
+      top: 5rem;
+    }
+
+    .portions {
+      font-size: 0.8rem;
+    }
+
+    .rakuzanLogo {
+      width: 50px;
+      top: 1rem;
+      right: 6.5rem;
+    }
+
+    .modelImg {
+      margin-top: 4rem;
+      width: 325px;
+    }
+
+    .colorButton {
+      width: fit-content;
+      border: 0;
+      padding: 0.5rem;
+      border-radius: 50px;
+      position: relative;
+
+      font-family: "Poppins", sans-serif;
+      text-align: right;
+      font-size: 0.75rem;
+      transition: 0.5s;
+    }
+
+    .colorButton span {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .rakuzanLogo {
+      position: absolute;
+      width: 50px;
+      top: 1rem;
+      right: 7rem;
+    }
+  }
 `;
 
 export const IndexIndicator = styled.div`
@@ -218,11 +311,17 @@ export const IndexIndicator = styled.div`
   .pageName {
     color: ${theme.linkColor};
   }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .pageName {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const PreviousIndexIndicator = styled.div`
   position: absolute;
-  left: 2rem;
+  left: 1em;
   bottom: 2rem;
 
   display: flex;
@@ -233,7 +332,7 @@ export const PreviousIndexIndicator = styled.div`
   height: fit-content;
 
   img {
-    width: 25px;
+    width: 20px;
   }
 
   &:hover {
@@ -267,7 +366,7 @@ export const OptionalsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   height: 100%;
   position: relative;
   background-image: url(${(props) => props.$optionalsBg});
@@ -277,7 +376,7 @@ export const OptionalsContainer = styled.div`
   border-radius: 10px;
 
   .optionals {
-    width: 90%;
+    width: 100%;
     height: 100%;
 
     position: relative;
@@ -339,7 +438,7 @@ export const OptionalsContainer = styled.div`
   }
 
   .optional {
-    width: 156px;
+    width: 106px;
     height: 70px;
     clip-path: polygon(0 0, 65% 0, 100% 100%, 29% 100%);
     display: flex;
@@ -437,6 +536,36 @@ export const OptionalsContainer = styled.div`
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .darkSideOfJapan__Container h2 {
+      font-size: 1.2rem;
+    }
+
+    .darkSideOfJapan__price {
+      font-size: 1.2rem;
+    }
+
+    .darkSideOfJapan__AddButton {
+      width: 100px;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    .darkSideOfJapan__Container h2 {
+      font-size: 1.2rem;
+    }
+
+    .darkSideOfJapan__price {
+      font-size: 1.2rem;
+    }
+
+    .darkSideOfJapan__AddButton {
+      width: 100px;
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const BannerContent = styled.div`
@@ -519,8 +648,8 @@ export const BannerContent = styled.div`
 export const ClosePopUp = styled.button`
   border: 0;
   position: absolute;
-  top: .5rem;
-  right: .5rem;
+  top: 0.5rem;
+  right: 0.5rem;
 
   background-color: transparent;
 
@@ -530,5 +659,15 @@ export const ClosePopUp = styled.button`
 
   .closePopUpIcon {
     width: 18px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    top: 1rem;
+    right: 2em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    top: 1rem;
+    right: 2em;
   }
 `;

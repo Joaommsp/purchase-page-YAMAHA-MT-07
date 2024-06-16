@@ -8,14 +8,13 @@ const theme = {
 };
 
 export const CheckoutContainer = styled.div`
-  width: 90%;
+  width: 100%;
   height: 100%;
 
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
-  padding: 2rem;
+  padding: 1rem;
 
   .itemCheckout {
     width: 50%;
@@ -40,6 +39,40 @@ export const CheckoutContainer = styled.div`
   .paymentCheckout {
     width: 50%;
     height: 100%;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    overflow-y: scroll;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .itemCheckout {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .paymentCheckout {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    overflow-y: scroll;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .itemCheckout {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .paymentCheckout {
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 
@@ -143,8 +176,8 @@ export const PaymentCheckout = styled.div`
 
   .creditCard {
     width: 350px;
-    background-color: #9B42C9;
-    height: 55%;
+    background-color: #9b42c9;
+    height: 210px;
 
     border-radius: 10px;
 
@@ -195,12 +228,136 @@ export const PaymentCheckout = styled.div`
     flex-direction: column;
   }
 
-  .creditCard__date, 
+  .creditCard__date,
   .creditCard__name {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .flag {
     width: 80px;
+  }
+
+  .creditCardForm {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .creditCardForm form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+  }
+
+  .input-wrapper img {
+    width: 20px;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    border: 0;
+    background-color: #eeeeee;
+    border: 2px solid transparent;
+    transition: 0.2s ease-in-out;
+  }
+
+  .input-wrapper input:hover {
+    border: 2px solid #00000030;
+  }
+
+  .input-wrapper input:focus {
+    border: 2px solid #00000080;
+  }
+
+  #expiration-date {
+    width: 200px;
+  }
+
+  .finishStore {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+    background-color: #df0126;
+    border: 0;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+  }
+
+  .finishStore:hover {
+    cursor: pointer;
+    background-color: #c40c0c;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .creditCard {
+      width: 300px;
+      height: 200px;
+    }
+
+    .creditCard__bank {
+      width: 40px;
+      height: 20px;
+    }
+
+    .creditCard__nfc {
+      width: 15px;
+      height: 15px;
+    }
+
+    .chip {
+      width: 70px;
+    }
+
+    .creditCard__infos {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    .creditCard__infos__data {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .creditCard__date,
+    .creditCard__name {
+      font-size: 0.8rem;
+    }
+
+    .flag {
+      width: 60px;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    .creditCard {
+      margin-top: 2rem;
+      width: 400px;
+      height: 250px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .creditCard {
+      margin-top: 2rem;
+      width: 400px;
+      height: 250px;
+    }
   }
 `;

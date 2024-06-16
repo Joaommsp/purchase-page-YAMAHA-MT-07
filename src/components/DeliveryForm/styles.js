@@ -48,7 +48,7 @@ export const DeliveryFormContainer = styled.div`
     font-size: 1.3rem;
     color: ${theme.linkColor};
     margin-bottom: 2rem;
-    font-family: "Poppins", sans-serif;;
+    font-family: "Poppins", sans-serif;
     letter-spacing: 1px;
     font-weight: 400;
     text-align: left;
@@ -159,6 +159,12 @@ export const DeliveryFormContainer = styled.div`
   .cepInput {
     width: 100%;
   } */
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .rakuzanLogo2 {
+      width: 80px;
+    }
+  }
 `;
 
 export const SubmitButton = styled.button`

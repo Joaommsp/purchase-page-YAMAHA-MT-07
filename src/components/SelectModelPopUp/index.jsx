@@ -35,6 +35,7 @@ const SelectModel = () => {
   const [buttonBgColor, setbuttonBgColor] = useState("#00000090");
   const [buttonText, setbuttonText] = useState("Buy online");
   const [selectModel, setSelectModel] = useState(false);
+  const [addBtnText, setAddBtnText] = useState("Add");
 
   useEffect(() => {
     gsap.to(".modelImgContainer", {
@@ -166,6 +167,8 @@ const SelectModel = () => {
 
   const closeSelectModelPopUp = () => {
     setSelectModel(false);
+    setformIndex(1);
+    setGoNextForm(true);
   };
 
   const animateButton = () => {
@@ -178,6 +181,11 @@ const SelectModel = () => {
     setbuttonAnimation(".5rem");
     setbuttonBgColor("#00000090");
     setbuttonText("Buy online");
+  };
+
+  const addOptional = () => {
+    setPrice(5100);
+    setAddBtnText("Done");
   };
 
   return (
@@ -294,7 +302,7 @@ const SelectModel = () => {
               <img src={RakuzanLogo} alt="" className="rakuzanLogo" />
               <div className="priceContainer">
                 <span className="price">R$ 48.500,00</span>
-                <span>or 24x of R$ 2300.00</span>
+                <span className="portions">or 24x of R$ 2300.00</span>
               </div>
               <IndexIndicator>
                 <span className="pageName">{formPage}</span>
@@ -307,19 +315,19 @@ const SelectModel = () => {
                   className="colorButton racingBlue"
                   onClick={() => changeColor(Model.racingBlue)}
                 >
-                  Racing Blue
+                  <span>Racing Blue</span>
                 </button>
                 <button
                   className="colorButton stormGray"
                   onClick={() => changeColor(Model.stormGray)}
                 >
-                  Storm Grey
+                  <span>Storm Grey</span>
                 </button>
                 <button
                   className="colorButton bloodWhite"
                   onClick={() => changeColor(Model.bloodWhite)}
                 >
-                  Blood White
+                  <span>Blood White</span>
                 </button>
               </div>
             </ModelsContainer>
@@ -333,9 +341,9 @@ const SelectModel = () => {
                   <span className="darkSideOfJapan__price">R$ 2.500,00</span>
                   <button
                     className="darkSideOfJapan__AddButton"
-                    onClick={() => setPrice(51000)}
+                    onClick={() => addOptional()}
                   >
-                    To Add
+                    {addBtnText}
                   </button>
                 </div>
                 <div className="optional">
@@ -416,7 +424,7 @@ const SelectModel = () => {
             </PreviousIndexIndicator>
           )}
           {selectModel && (
-            <ClosePopUp onClick={closeSelectModelPopUp}>
+            <ClosePopUp onClick={() => closeSelectModelPopUp()}>
               {" "}
               <img
                 src={Icons.closeIcon}

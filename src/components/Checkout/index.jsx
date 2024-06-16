@@ -6,6 +6,7 @@ import CheckoutImage from "../../assets/images/checkout-image.png";
 import DeliveryIcon from "../../assets/images/delivery-icon.png";
 import NfcIcon from "../../assets/images/nfc-sign.png";
 import CreditCardChip from "../../assets/images/credit-card-chip.png";
+import { Icons } from "../../assets/images/svg/icons/icons";
 
 import MasterCard from "../../assets/images/flags/masterCard.png";
 import Nubank from "../../assets/images/banks/nubank.png";
@@ -18,12 +19,12 @@ import {
 } from "./styles";
 
 const Checkout = (props) => {
-  const [deliveryPrice,] = useState(2000);
+  const [deliveryPrice, setDeliveryPrice] = useState(2000);
 
   const [cardHolder, setCardHolder] = useState("********");
   const [cardNumber, setCardNumber] = useState("");
   const [cardMask, setCardMask] = useState("0000 0000 0000 0000");
-  const [cardExpiration,] = useState("00/00");
+  const [cardExpiration, setCardExpiration] = useState("00/00");
 
   const cardPatterns = {
     visa: /^4\d{0,15}/,
@@ -75,7 +76,7 @@ const Checkout = (props) => {
             <div>
               <span className="itemName">Desahama GT-07</span>
               <span>
-                Qty <span className="amount">1</span>
+                <span className="amount">1</span>
               </span>
             </div>
             <div>
@@ -133,23 +134,36 @@ const Checkout = (props) => {
         <div className="creditCardForm">
           <form action="">
             <div className="input-wrapper">
-              <label htmlFor="card-number">Número do cartão</label>
-              <input id="card-number" onChange={handleCardNumber} />
+              <input
+                id="card-number"
+                onChange={handleCardHolder}
+                maxLength={16}
+                placeholder="Holder"
+              />
+              <img src={Icons.UserCircleDarkIcon} alt="" />
             </div>
 
             <div className="input-wrapper">
-              <label htmlFor="card-holder">Nome do titular</label>
-              <input type="text" value={cardNumber} placeholder="Número do cartão" onChange={handleCardHolder} />
+              <input
+                type="text"
+                value={cardNumber}
+                placeholder="Card number"
+                maxLength={19}
+                onChange={handleCardNumber}
+              />
+              <img src={Icons.CardIcon} alt="" />
             </div>
 
             <div className="flex">
               <div className="input-wrapper">
-                <label htmlFor="expiration-date">Expiração</label>
-                <input id="expiration-date" />
+                <input id="expiration-date" placeholder="Expiration date" />
+                <img src={Icons.CalendarIcon} alt="" />
               </div>
             </div>
 
-            <button id="add-card">ADICIONAR CARTÃO</button>
+            <button id="add-card" className="finishStore">
+              Finalizar compra
+            </button>
           </form>
         </div>
       </PaymentCheckout>

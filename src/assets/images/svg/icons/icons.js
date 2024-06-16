@@ -7,6 +7,9 @@ import userIcon from "./user-icon.svg";
 import homeIcon from "./home-icon.svg";
 import checkIcon from "./check-icon.svg";
 import backwardIcon from "./backward-icon.svg";
+import CalendarIcon from "./calendar-icon.svg";
+import UserCircleDarkIcon from "./user-circle-icon.svg";
+import CardIcon from "./card-icon.svg";
 
 export const Icons = {
   menuIcon: menuIcon,
@@ -18,4 +21,7 @@ export const Icons = {
   homeIcon: homeIcon,
   checkIcon: checkIcon,
   backwardIcon: backwardIcon,
+  CalendarIcon: CalendarIcon,
+  UserCircleDarkIcon: UserCircleDarkIcon,
+  CardIcon: CardIcon,
 };

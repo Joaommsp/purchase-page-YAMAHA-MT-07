@@ -28,8 +28,9 @@ export const HeaderLinks = styled.ul`
   li a {
     text-decoration: none;
     color: ${theme.alternativePrimary};
-    font-weight: 500;
+    font-weight: 300;
     transition: 0.5s opacity;
+    font-size: .9rem;
   }
 
   img {

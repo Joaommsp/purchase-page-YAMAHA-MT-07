@@ -48,7 +48,7 @@ export const PersonalFormContainer = styled.div`
     font-size: 1.3rem;
     color: ${theme.linkColor};
     margin-bottom: 2rem;
-    font-family: "Poppins", sans-serif;;
+    font-family: "Poppins", sans-serif;
     letter-spacing: 1px;
     font-weight: 400;
     text-align: left;
@@ -155,6 +155,69 @@ export const PersonalFormContainer = styled.div`
   .cepInput {
     width: 100%;
   } */
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .rakuzanLogo {
+      width: 80px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .personalInfos__personal {
+
+    padding: 1rem;
+  }
+
+  .personalInfos__title {
+    width: 50%;
+    font-size: .9rem;
+    color: ${theme.linkColor};
+    margin-bottom: 2rem;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-align: left;
+  }
+    
+    .rakuzanLogo {
+      position: absolute;
+      width: 50px;
+      top: 1rem;
+      right: 7rem;
+    }
+
+    .formItem {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nameInput {
+      width: 100%;
+    }
+
+    .lastNameInput {
+      width: 100%;
+    }
+
+    .cpfInput {
+      width: 100%;
+    }
+
+    .emailInput {
+      width: 100%;
+    }
+
+    .phoneInput {
+      width: 100%;
+    }
+
+    .formItem {
+      margin-bottom: 2rem;
+    }
+  }
 `;
 
 export const SubmitButton = styled.button`
