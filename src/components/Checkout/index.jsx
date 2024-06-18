@@ -74,7 +74,7 @@ const Checkout = (props) => {
           </div>
           <div className="itemCheckout__details">
             <div>
-              <span className="itemName">Desahama GT-07</span>
+              <span className="itemName">Yamaha MT-07</span>
               <span>
                 <span className="amount">1</span>
               </span>

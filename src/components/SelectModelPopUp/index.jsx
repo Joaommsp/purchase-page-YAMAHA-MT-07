@@ -436,8 +436,8 @@ const SelectModel = () => {
         </SelectModelContainer>
       )}
       <BannerContent $position={buttonAnimation} $bgColor={buttonBgColor}>
-        <h1 className="homeTitle">GT-07 ABS</h1>
-        <h2 className="homeSubtitle">the goddess of torque motorcycle</h2>
+        <h1 className="homeTitle">MT-07 ABS</h1>
+        <h2 className="homeSubtitle">Master of torque motorcycle</h2>
         <button
           className="buyButton"
           onMouseEnter={animateButton}

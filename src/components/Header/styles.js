@@ -34,7 +34,7 @@ export const HeaderLinks = styled.ul`
   }
 
   img {
-    width: 150px;
+    width: 136px;
   }
 
   li:hover {

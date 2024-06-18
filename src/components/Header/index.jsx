@@ -1,7 +1,4 @@
-import React from "react";
-
-import Logo from "../../assets/images/DESAMAHA-LOGO.png";
-import { Icons } from "../../assets/images/svg/icons/icons";
+import Logo from "../../assets/images/yamahaLogo.png";
 
 import { HeaderContainer, HeaderLinks} from "./styles";
 

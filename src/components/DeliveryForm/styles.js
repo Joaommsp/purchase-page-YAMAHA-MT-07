@@ -165,6 +165,64 @@ export const DeliveryFormContainer = styled.div`
       width: 80px;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    .rakuzanLogo2 {
+      width: 50px;
+      top: 1rem;
+      right: 6.5rem;
+    }
+
+    .adressInfos__personal {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding: 1rem;
+
+      color: ${theme.primaryColor};
+    }
+
+    .formItem {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cityInput {
+      width: 100%;
+    }
+
+    .stateInput {
+      width: 100%;
+    }
+
+    .cepInput {
+      width: 50%;
+    }
+
+    .streetInput {
+      width: 100%;
+    }
+
+    .numberInput {
+      width: 50%;
+    }
+
+    .formItem__main {
+      margin-bottom: 1rem;
+    }
+
+    .formItem {
+      margin-bottom: 1rem;
+    }
+
+    .adressInfos__title {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const SubmitButton = styled.button`

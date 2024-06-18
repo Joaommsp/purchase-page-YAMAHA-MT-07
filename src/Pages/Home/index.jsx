@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import SelectModel from "../../components/SelectModelPopUp";
+import Specifications from "../../components/Specifications";
 
 import Banner from "../../assets/images/banner-mt07.jpg";
 
@@ -11,7 +12,10 @@ const Home = () => {
       <Header />
       <BannerContainer $backgroundImg={Banner}>
         <BannerGradient>
-          <SelectModel />
+          <div className="selectModelModalContainer">
+            <SelectModel />
+          </div>
+          <Specifications />
         </BannerGradient>
       </BannerContainer>
     </HomeContainer>

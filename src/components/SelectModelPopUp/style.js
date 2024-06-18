@@ -18,7 +18,7 @@ export const SelectModelContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -288,6 +288,43 @@ export const ModelsContainer = styled.div`
       width: 50px;
       top: 1rem;
       right: 7rem;
+    }
+
+    .colorButton span {
+      display: none;
+    }
+
+    .colorButton {
+      width: fit-content;
+      border: 0;
+      padding: 0.5rem;
+      border-radius: 50px;
+      position: relative;
+
+      font-family: "Poppins", sans-serif;
+      text-align: right;
+      font-size: 0.75rem;
+      transition: 0.5s;
+    }
+
+    .modelImg {
+      width: 250px;
+      filter: drop-shadow(-6px -2px 4px #757575);
+      transition: 0.5s;
+    }
+
+    .price {
+      font-size: 1rem;
+    }
+
+    .priceContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      position: absolute;
+      right: 2rem;
+      top: 5rem;
     }
   }
 `;
@@ -566,6 +603,28 @@ export const OptionalsContainer = styled.div`
       font-size: 0.8rem;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    border-radius: 0;
+
+    .darkSideOfJapan__Container h2 {
+      font-size: 1.2rem;
+    }
+
+    .darkSideOfJapan__price {
+      font-size: 1.2rem;
+    }
+
+    .darkSideOfJapan__AddButton {
+      width: 100px;
+      font-size: 0.8rem;
+    }
+
+    .optionals {
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+  }
 `;
 
 export const BannerContent = styled.div`
@@ -577,6 +636,7 @@ export const BannerContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  padding-bottom: 10rem;
 
   .homeTitle {
     font-size: 3rem;
@@ -591,6 +651,7 @@ export const BannerContent = styled.div`
     margin-bottom: 2rem;
     text-align: center;
     text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.6);
+    color: #b7b7b7;
   }
 
   .buyButton {

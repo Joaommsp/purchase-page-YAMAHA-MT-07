@@ -346,6 +346,9 @@ export const PaymentCheckout = styled.div`
   }
 
   @media only screen and (min-width: 600px) and (max-width: 800px) {
+    width: fit-content;
+    height: 100%;
+
     .creditCard {
       margin-top: 2rem;
       width: 400px;
@@ -353,11 +356,25 @@ export const PaymentCheckout = styled.div`
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (min-width: 500px) and (max-width: 600px) {
+    width: fit-content;
+    height: 100%;
+
     .creditCard {
       margin-top: 2rem;
       width: 400px;
       height: 250px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: fit-content;
+    height: 100%;
+
+    .creditCard {
+      margin-top: 2rem;
+      width: 300px;
+      height: 200px;
     }
   }
 `;

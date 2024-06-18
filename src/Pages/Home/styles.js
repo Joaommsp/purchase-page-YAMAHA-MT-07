@@ -7,12 +7,13 @@ export const HomeContainer = styled.div`
 
 export const BannerContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   background-image: url(${(props) => props.$backgroundImg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 `;
 
 export const BannerGradient = styled.div`
@@ -21,25 +22,11 @@ export const BannerGradient = styled.div`
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.0802696078431373) 0%,
-    rgba(18, 18, 18, 1) 100%
+    rgba(0, 0, 0, 0.0802696078431373) 50%,
+    #000000 100%
   );
-`;
 
-
-export const ClosePopUp = styled.button`
-  border: 0;
-  position: absolute;
-  top: 5rem;
-  right: 5rem;
-
-  background-color: transparent;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  .closePopUpIcon {
-    width: 25px;
+  .selectModelModalContainer {
+    height: 100vh;
   }
 `;
