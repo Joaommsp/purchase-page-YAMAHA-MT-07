@@ -2,10 +2,18 @@ import styled from "styled-components";
 
 export const SpecificationElement = styled.div`
   width: 100%;
-  height: 100vh;
-  background-color: transparent;
+  height: 100%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 0) 0%,
+    rgba(0, 0, 0, 0.5143376039655021) 35%,
+    rgba(0, 0, 0, 0.8514162556508954) 100%
+  );
 
-  padding: 1rem 8rem;
+  padding: 0rem 8rem 4rem 8rem;
+
+  display: flex;
 `;
 
 export const SpecificationTextContent = styled.div`
@@ -87,5 +95,109 @@ export const SpecificationsBtn = styled.button`
   &:hover {
     cursor: pointer;
     background-color: #00000090;
+  }
+`;
+
+export const GalleryContainer = styled.div`
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-items: center;
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+
+  .galleryImage {
+    width: 236px;
+    border-radius: 14px;
+    box-shadow: 0.9px 1.2px 3.6px rgba(0, 0, 0, 0.101),
+      2.5px 3.3px 10px rgba(0, 0, 0, 0.145),
+      6px 7.8px 24.1px rgba(0, 0, 0, 0.189), 20px 26px 80px rgba(0, 0, 0, 0.29);
+
+    transition: 0.5s ease-in-out;
+  }
+
+  .galleryImage:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+`;
+
+export const BikeData = styled.div`
+  width: 100%;
+  height: 100%;
+
+  padding: 4rem 8rem 4rem 8rem;
+  background-color: #191919;
+
+  display: flex;
+
+  .bikeDataText {
+    width: 50%;
+  }
+
+  .bikeDataTitle {
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .bikeDataTitle strong {
+    color: #c4fb6d;
+  }
+
+  .bikeDataDescription {
+    font-size: 0.8rem;
+    color: #b4b4b8;
+    margin-bottom: 2rem;
+  }
+
+  .logoMtContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logoMT {
+    width: 256px;
+  }
+
+  .statsContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .stat {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .statValue {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #c4fb6d;
+
+    color: #c4fb6d;
+    font-size: 1.5rem;
+    font-family: "Anta", sans-serif;
+  }
+
+  .statName {
+    font-size: 0.8rem;
   }
 `;
