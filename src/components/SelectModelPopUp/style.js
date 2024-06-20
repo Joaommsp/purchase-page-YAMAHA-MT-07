@@ -25,7 +25,7 @@ export const SelectModelContainer = styled.div`
   right: 0;
   margin: auto;
 
-  z-index: 100;
+  z-index: 2000;
 
   background-color: ${theme.alternativePrimary};
 
