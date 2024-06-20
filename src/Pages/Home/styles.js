@@ -30,3 +30,17 @@ export const BannerGradient = styled.div`
     height: 100vh;
   }
 `;
+
+export const SecundaryBannerContainer = styled.div`
+  width: 100%;
+  padding-bottom: 2rem;
+
+  background-color: #827e6c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .secundaryBanner {
+  }
+`;

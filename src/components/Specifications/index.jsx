@@ -57,12 +57,12 @@ function Specifications(props) {
               <span className="statName">Capacity</span>
             </div>
             <div className="stat">
-              <span className="statValue">689cc</span>
-              <span className="statName">Capacity</span>
+              <span className="statValue">74.8</span>
+              <span className="statName">Horse Power</span>
             </div>
             <div className="stat">
-              <span className="statValue">689cc</span>
-              <span className="statName">Capacity</span>
+              <span className="statValue">6.9</span>
+              <span className="statName">kgf.m</span>
             </div>
           </div>
         </div>

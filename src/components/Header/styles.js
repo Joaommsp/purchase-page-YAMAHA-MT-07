@@ -17,6 +17,8 @@ export const HeaderContainer = styled.div`
   justify-content: center;
 
   background-color: transparent;
+  z-index: 2000;
+  background-color: #00000090;
 `;
 
 export const HeaderLinks = styled.ul`
@@ -30,7 +32,7 @@ export const HeaderLinks = styled.ul`
     color: ${theme.alternativePrimary};
     font-weight: 300;
     transition: 0.5s opacity;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   img {
@@ -44,7 +46,7 @@ export const HeaderLinks = styled.ul`
 
   @media only screen and (max-width: 600px) {
     li a {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
 
     img {

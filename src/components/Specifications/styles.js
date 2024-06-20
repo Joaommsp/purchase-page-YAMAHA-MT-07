@@ -50,7 +50,7 @@ export const VersionSellectButtons = styled.div`
   .versionBtn {
     padding: 0.5rem 1.5rem;
     border: 2px solid #ffffff;
-    border-radius: 100px;
+    border-radius: 5px;
     background-color: transparent;
     font-family: "Roboto", sans-serif;
     font-size: 0.8rem;
@@ -75,7 +75,7 @@ export const SpecificationsBtn = styled.button`
   gap: 0.5rem;
 
   border: 2px solid #ffffff;
-  border-radius: 100px;
+  border-radius: 5px;
   background-color: transparent;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -116,7 +116,7 @@ export const GalleryContainer = styled.div`
 
   .galleryImage {
     width: 236px;
-    border-radius: 14px;
+    border-radius: 2px;
     box-shadow: 0.9px 1.2px 3.6px rgba(0, 0, 0, 0.101),
       2.5px 3.3px 10px rgba(0, 0, 0, 0.145),
       6px 7.8px 24.1px rgba(0, 0, 0, 0.189), 20px 26px 80px rgba(0, 0, 0, 0.29);
@@ -167,7 +167,7 @@ export const BikeData = styled.div`
   }
 
   .logoMT {
-    width: 256px;
+    width: 224px;
   }
 
   .statsContainer {
