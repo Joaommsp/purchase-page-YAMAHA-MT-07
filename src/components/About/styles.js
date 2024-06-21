@@ -19,7 +19,9 @@ export const AboutContainer = styled.div`
   }
 
   .aboutThemeTitle {
+    width: 100%;
     font-size: 0.8rem;
+    display: block;
   }
 
   .aboutThemeEmphasis {
@@ -41,10 +43,19 @@ export const AboutContainer = styled.div`
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
+    margin-bottom: 4rem;
   }
 
   .galleryImage {
     width: 33.3%;
     border-radius: 2px;
+  }
+
+  .alignRight {
+    text-align: right;
+  }
+
+  .noMargin {
+    margin-bottom: 0;
   }
 `;

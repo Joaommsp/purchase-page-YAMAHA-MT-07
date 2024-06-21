@@ -5,6 +5,7 @@ import About from "../../components/About";
 
 import Banner from "../../assets/images/banner-mt07.jpg";
 import SecundaryBanner from "../../assets/images/banner02.png";
+import TerciaryBanner from "../../assets/images/banner03.png";
 
 import {
   HomeContainer,
