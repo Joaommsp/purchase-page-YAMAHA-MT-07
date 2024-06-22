@@ -1,3 +1,4 @@
+import { element } from "prop-types";
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
@@ -33,9 +34,9 @@ export const BannerGradient = styled.div`
 
 export const SecundaryBannerContainer = styled.div`
   width: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
 
-  background-color: #827e6c;
+  background-color: ${(element) => element.$bgColor};
 
   display: flex;
   align-items: center;
@@ -44,3 +45,4 @@ export const SecundaryBannerContainer = styled.div`
   .secundaryBanner {
   }
 `;
+

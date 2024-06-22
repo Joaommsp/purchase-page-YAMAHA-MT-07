@@ -11,6 +11,9 @@ import CalendarIcon from "./calendar-icon.svg";
 import UserCircleDarkIcon from "./user-circle-icon.svg";
 import CardIcon from "./card-icon.svg";
 import ArrowRightShort from "./arrow-right-short.svg";
+import FacebookIcon from "./facebook-icon.svg";
+import TwitterIcon from "./twitter-icon.svg";
+import LinkedinIcon from "./linkedin-icon.svg";
 
 export const Icons = {
   menuIcon: menuIcon,
@@ -26,4 +29,7 @@ export const Icons = {
   UserCircleDarkIcon: UserCircleDarkIcon,
   CardIcon: CardIcon,
   ArrowRightShort: ArrowRightShort,
+  FacebookIcon: FacebookIcon,
+  TwitterIcon: TwitterIcon,
+  LinkedinIcon: LinkedinIcon,
 };

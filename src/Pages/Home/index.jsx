@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import SelectModel from "../../components/SelectModelPopUp";
 import Specifications from "../../components/Specifications";
 import About from "../../components/About";
+import Footer from "../../components/Footer";
 
 import Banner from "../../assets/images/banner-mt07.jpg";
 import SecundaryBanner from "../../assets/images/banner02.png";
@@ -24,10 +25,14 @@ const Home = () => {
             <SelectModel />
           </div>
           <Specifications />
-          <SecundaryBannerContainer>
+          <SecundaryBannerContainer $bgColor={"#827e6c"}>
             <img className="secundaryBanner" src={SecundaryBanner} alt="" />
           </SecundaryBannerContainer>
           <About />
+          <SecundaryBannerContainer $bgColor={"#EEFDD3"}>
+            <img className="secundaryBanner" src={TerciaryBanner} alt="" />
+          </SecundaryBannerContainer>
+          <Footer />
         </BannerGradient>
       </BannerContainer>
     </HomeContainer>
