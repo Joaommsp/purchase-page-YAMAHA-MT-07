@@ -696,11 +696,12 @@ export const BannerContent = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    h1 {
-      font-size: 2.5rem;
+    .homeTitle {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    h2 {
+    .homeSubtitle {
       font-size: 1rem;
     }
   }

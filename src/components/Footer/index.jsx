@@ -78,8 +78,8 @@ function Footer(props) {
         </div>
       </div>
       <span className="atribuiton">
-        developed by João Marcos and for non-commercial purposes, all rights
-        belong to the official brand
+        developed by<strong> João Marcos</strong> and for non-commercial
+        purposes, all rights belong to the official brand
       </span>
     </FooterContainer>
   );

@@ -69,4 +69,37 @@ export const FooterContainer = styled.div`
     font-size: 0.7rem;
     font-weight: 300;
   }
+
+  .atribuiton strong {
+    color: #c3f783;
+    font-weight: 300;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 3rem 2rem 8rem 2rem;
+    gap: 56px;
+    flex-direction: column;
+
+    .logo {
+      width: 104px;
+    }
+
+    .footerSections {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 56px;
+    }
+
+    .atribuiton {
+      width: 100%;
+      text-align: center;
+      padding: 0 2rem;
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.7rem;
+      font-weight: 300;
+    }
+  }
 `;

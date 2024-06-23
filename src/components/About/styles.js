@@ -58,4 +58,42 @@ export const AboutContainer = styled.div`
   .noMargin {
     margin-bottom: 0;
   }
+
+  @media only screen and (max-width: 600px) {
+    padding: 2rem 1rem 2rem 1rem;
+
+    .aboutTheme {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .aboutThemeMain {
+      width: 100%;
+    }
+
+    .aboutThemeTextContainer {
+      width: 100%;
+    }
+
+    .aboutThemeEmphasis {
+      font-size: 1rem;
+    }
+
+    .galleryTheme {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    .galleryImage {
+      width: 100%;
+    }
+  }
 `;

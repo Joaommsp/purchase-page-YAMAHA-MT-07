@@ -14,6 +14,9 @@ import ArrowRightShort from "./arrow-right-short.svg";
 import FacebookIcon from "./facebook-icon.svg";
 import TwitterIcon from "./twitter-icon.svg";
 import LinkedinIcon from "./linkedin-icon.svg";
+import SearchIcon from "./search-icon.svg";
+import ShopBagIcon from "./shopbag-icon.svg";
+import MenuIcon from "./menu-icon-light.svg";
 
 export const Icons = {
   menuIcon: menuIcon,
@@ -32,4 +35,7 @@ export const Icons = {
   FacebookIcon: FacebookIcon,
   TwitterIcon: TwitterIcon,
   LinkedinIcon: LinkedinIcon,
+  SearchIcon: SearchIcon,
+  ShopBagIcon: ShopBagIcon,
+  MenuIcon: MenuIcon,
 };

@@ -14,6 +14,13 @@ export const SpecificationElement = styled.div`
   padding: 0rem 8rem 4rem 8rem;
 
   display: flex;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 40px;
+
+    padding: 0rem 0.5rem 2rem 0.5rem;
+  }
 `;
 
 export const SpecificationTextContent = styled.div`
@@ -24,6 +31,11 @@ export const SpecificationTextContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h2`
@@ -31,6 +43,11 @@ export const Title = styled.h2`
   font-size: 5rem;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.71);
   line-height: 1.2;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.5rem;
+    text-align: center;
+  }
 `;
 
 export const BikeName = styled.span`
@@ -38,6 +55,11 @@ export const BikeName = styled.span`
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.71);
   margin-left: 0.5rem;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 export const VersionSellectButtons = styled.div`
@@ -75,7 +97,7 @@ export const SpecificationsBtn = styled.button`
   gap: 0.5rem;
 
   border: 2px solid #ffffff;
-  border-radius: 5px;
+  border-radius: bikeDataTitle 5px;
   background-color: transparent;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -95,6 +117,12 @@ export const SpecificationsBtn = styled.button`
   &:hover {
     cursor: pointer;
     background-color: #00000090;
+  }
+
+  @media only screen and (max-width: 600px) {
+    span {
+      font-size: 0.8rem;
+    }
   }
 `;
 
@@ -127,6 +155,28 @@ export const GalleryContainer = styled.div`
   .galleryImage:hover {
     cursor: pointer;
     transform: scale(1.1);
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 2rem;
+    }
+
+    .galleryImage {
+      width: 80%;
+    }
+
+    .galleryImage:hover {
+      cursor: pointer;
+      transform: scale(1);
+    }
   }
 `;
 
@@ -199,5 +249,40 @@ export const BikeData = styled.div`
 
   .statName {
     font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+
+    flex-direction: column;
+
+    padding: 2rem 1rem 2rem 1rem;
+
+    .bikeDataText {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .bikeDataTitle {
+      width: 80%;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    .bikeDataDescription {
+      font-size: 0.8rem;
+    }
+
+    .statsContainer {
+      flex-direction: column;
+    }
+
+    .logoMtContainer {
+      width: 100%;
+    }
+
+    .logoMT {
+      width: 200px;
+    }
   }
 `;

@@ -42,7 +42,7 @@ export const SecundaryBannerContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  .secundaryBanner {
-  }
+
+overflow: hidden;
 `;
 
