@@ -183,11 +183,11 @@ export const GalleryContainer = styled.div`
       align-items: center;
       justify-content: center;
       gap: 24px;
-      padding: 2rem;
+      padding: .5rem;
     }
 
     .galleryImage {
-      width: 80%;
+      width: 100%;
     }
 
     .galleryImage:hover {

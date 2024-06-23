@@ -88,7 +88,7 @@ export const AboutContainer = styled.div`
       justify-content: center;
       flex-direction: column;
       gap: 1rem;
-      padding: 1rem;
+      padding: 0rem;
       margin-bottom: 4rem;
     }
 
