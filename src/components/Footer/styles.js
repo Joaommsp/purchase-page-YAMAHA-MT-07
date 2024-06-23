@@ -9,11 +9,11 @@ export const FooterContainer = styled.div`
   justify-content: flex-start;
   gap: 196px;
 
-  padding: 5rem 8rem;
+  padding: 5rem 4rem;
   position: relative;
 
   .logo {
-    width: 156px;
+    width: 106px;
   }
 
   .footerSection {
@@ -47,6 +47,7 @@ export const FooterContainer = styled.div`
   .footerSections {
     display: flex;
     gap: 128px;
+    flex-wrap: wrap;
   }
 
   .socialLinks {
@@ -85,9 +86,68 @@ export const FooterContainer = styled.div`
     }
 
     .footerSections {
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       gap: 56px;
+    }
+
+    .atribuiton {
+      width: 100%;
+      text-align: center;
+      padding: 0 2rem;
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.7rem;
+      font-weight: 300;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    padding: 3rem 2rem 8rem 2rem;
+    gap: 56px;
+    flex-direction: column;
+
+    .logo {
+      width: 104px;
+    }
+
+    .footerSections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .atribuiton {
+      width: 100%;
+      text-align: center;
+      padding: 0 2rem;
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.7rem;
+      font-weight: 300;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    padding: 3rem 5rem 8rem 4rem;
+    gap: 56px;
+    flex-direction: column;
+
+    .logo {
+      width: 104px;
+    }
+
+    .footerSections {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     .atribuiton {

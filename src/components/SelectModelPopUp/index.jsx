@@ -8,7 +8,6 @@ import Checkout from "../Checkout";
 import {
   SelectModelContainer,
   ModelsContainer,
-  IndexIndicator,
   NextIndexIndicator,
   OptionalsContainer,
   PreviousIndexIndicator,
@@ -16,7 +15,6 @@ import {
   ClosePopUp,
 } from "./style";
 
-import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
 import OptionalsBg from "../../assets/images/optionals-bg.png";
 
 import { Icons } from "../../assets/images/svg/icons/icons";
@@ -26,8 +24,6 @@ import { Model } from "../../assets/images/models/models";
 const SelectModel = () => {
   const [modelImg, setModelImg] = useState(Model.racingBlue);
   const [formIndex, setformIndex] = useState(1);
-  const [formPage] = useState("Select color");
-  const [nextFormPage] = useState("Next");
   const [goNextForm, setGoNextForm] = useState(true);
   const [goPreviousForm, setGoPreviousForm] = useState(false);
   const [price, setPrice] = useState(48500);
@@ -125,11 +121,6 @@ const SelectModel = () => {
       opacity: 1,
     });
 
-    gsap.to(".rakuzanLogo", {
-      duration: 0.5,
-      x: 55,
-      opacity: 1,
-    });
   }, [formIndex]);
 
   const changeColor = (imageColor) => {
@@ -299,14 +290,10 @@ const SelectModel = () => {
           )}
           {formIndex === 1 && (
             <ModelsContainer>
-              <img src={RakuzanLogo} alt="" className="rakuzanLogo" />
               <div className="priceContainer">
                 <span className="price">R$ 48.500,00</span>
                 <span className="portions">or 24x of R$ 2300.00</span>
               </div>
-              <IndexIndicator>
-                <span className="pageName">{formPage}</span>
-              </IndexIndicator>
               <div className="modelImgContainer">
                 <img src={modelImg} alt="MT-07 Yamaha" className="modelImg" />
               </div>
@@ -414,7 +401,6 @@ const SelectModel = () => {
                 nextFormItem();
               }}
             >
-              <span className="pageName">{nextFormPage}</span>
               <img src={Icons.arrowRight} alt="" />
             </NextIndexIndicator>
           )}

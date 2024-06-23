@@ -96,6 +96,7 @@ export const SelectModelContainer = styled.div`
 
     .sideBar {
       border-radius: 0;
+      display: none;
     }
   }
 `;
@@ -375,14 +376,23 @@ export const PreviousIndexIndicator = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 600px) {
+    background-color: red;
+    padding: 0.5rem;
+    border-radius: 100px;
+    bottom: 1.3rem;
+    img {
+      width: 10px;
+    }
+  }
 `;
 
 export const NextIndexIndicator = styled.div`
   position: absolute;
-  right: 0rem;
-  bottom: 1rem;
-  width: 150px;
-  height: 50px;
+  right: 2rem;
+  bottom: 2rem;
+  width: 50px;
 
   display: flex;
   justify-content: center;
@@ -396,6 +406,19 @@ export const NextIndexIndicator = styled.div`
 
   &:hover {
     cursor: pointer;
+  }
+
+  img {
+    width: 24px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 50px;
+    bottom: 1.5rem;
+    right: 1rem;
+    img {
+      width: 25px;
+    }
   }
 `;
 

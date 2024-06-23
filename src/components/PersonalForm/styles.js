@@ -164,21 +164,20 @@ export const PersonalFormContainer = styled.div`
 
   @media only screen and (max-width: 600px) {
     .personalInfos__personal {
+      padding: 1rem;
+    }
 
-    padding: 1rem;
-  }
+    .personalInfos__title {
+      width: 50%;
+      font-size: 0.9rem;
+      color: ${theme.linkColor};
+      margin-bottom: 2rem;
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 1px;
+      font-weight: 400;
+      text-align: left;
+    }
 
-  .personalInfos__title {
-    width: 50%;
-    font-size: .9rem;
-    color: ${theme.linkColor};
-    margin-bottom: 2rem;
-    font-family: "Poppins", sans-serif;
-    letter-spacing: 1px;
-    font-weight: 400;
-    text-align: left;
-  }
-    
     .rakuzanLogo {
       position: absolute;
       width: 50px;
@@ -262,5 +261,9 @@ export const ResetFormButton = styled.div`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
   }
 `;

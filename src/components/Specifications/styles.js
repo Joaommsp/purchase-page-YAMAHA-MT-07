@@ -21,6 +21,13 @@ export const SpecificationElement = styled.div`
 
     padding: 0rem 0.5rem 2rem 0.5rem;
   }
+
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    flex-direction: column;
+    gap: 40px;
+
+    padding: 0rem 0.5rem 2rem 0.5rem;
+  }
 `;
 
 export const SpecificationTextContent = styled.div`
@@ -36,6 +43,11 @@ export const SpecificationTextContent = styled.div`
     width: 100%;
     align-items: center;
   }
+
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h2`
@@ -45,6 +57,11 @@ export const Title = styled.h2`
   line-height: 1.2;
 
   @media only screen and (max-width: 600px) {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
     font-size: 2.5rem;
     text-align: center;
   }
@@ -178,6 +195,28 @@ export const GalleryContainer = styled.div`
       transform: scale(1);
     }
   }
+
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    width: 100%;
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 2rem;
+    }
+
+    .galleryImage {
+      width: 33.3%;
+    }
+
+    .galleryImage:hover {
+      cursor: pointer;
+      transform: scale(1);
+    }
+  }
 `;
 
 export const BikeData = styled.div`
@@ -275,6 +314,41 @@ export const BikeData = styled.div`
 
     .statsContainer {
       flex-direction: column;
+    }
+
+    .logoMtContainer {
+      width: 100%;
+    }
+
+    .logoMT {
+      width: 200px;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    width: 100%;
+
+    flex-direction: column;
+
+    padding: 2rem 1rem 2rem 1rem;
+
+    .bikeDataText {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .bikeDataTitle {
+      width: 80%;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    .bikeDataDescription {
+      font-size: 0.8rem;
+    }
+
+    .statsContainer {
+      flex-direction: row;
     }
 
     .logoMtContainer {

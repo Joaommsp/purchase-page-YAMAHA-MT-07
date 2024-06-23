@@ -369,7 +369,8 @@ export const PaymentCheckout = styled.div`
 
   @media only screen and (max-width: 500px) {
     width: fit-content;
-    height: 100%;
+    height: 90%;
+    padding: 1rem 0 1rem 0rem;
 
     .creditCard {
       margin-top: 2rem;

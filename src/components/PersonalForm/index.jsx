@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 
-import RakuzanLogo from "../../assets/images/rakuzan-logo.png";
-
 import { PersonalFormContainer, SubmitButton, ResetFormButton } from "./styles";
 
 const PersonalForm = () => {
@@ -13,16 +11,10 @@ const PersonalForm = () => {
       opacity: 1,
     });
 
-    gsap.to(".rakuzanLogo", {
-      duration: 0.5,
-      x: 55,
-      opacity: 1,
-    });
   });
 
   return (
     <PersonalFormContainer className="personalFormContainer">
-      <img src={RakuzanLogo} alt="Rakuzan Logo" className="rakuzanLogo" />
       <div className="personalInfos">
         <div className="personalInfos__personal">
           <h2 className="personalInfos__title">Personal Informations</h2>

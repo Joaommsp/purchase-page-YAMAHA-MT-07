@@ -268,4 +268,8 @@ export const ResetFormButton = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
